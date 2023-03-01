@@ -1,0 +1,38 @@
+pipeline {
+    agent {
+        label 'ubuntu_slave'
+    }
+    stages {
+        stage('Checkout') {
+            steps{
+                git 'https://git@github.com:Dmitriy-Malevich/Pipeline2.git'
+            }
+        }
+
+    stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                junit '**/target/surefire-reports/TEST-*.xml'
+            }
+        }
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t my-app .'
+            }
+        }
+        stage('Run Container') {
+            steps {
+                sh 'docker run -d -p 8080:8080 my-app'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'docker push my-app'
+            }
+        }
+    }
+}
