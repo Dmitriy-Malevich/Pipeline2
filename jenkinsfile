@@ -15,18 +15,18 @@ pipeline {
 //        }
         stage('Build Image') {
             steps {
-                sh 'docker build -t my-app .'
+                sh 'docker build -t dmitriy228/my-app .'
             }
         }
         stage('Run Container') {
             steps {
-                sh 'docker run -d my-app'
+                sh 'docker run -d dmitriy228/my-app'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker tag my-app:latest dmitriy228/my-app'
-		sh 'docker push my-app'
+//                sh 'docker tag my-app:latest dmitriy228/my-app'
+		sh 'docker push dmitriy228/my-app'
             }
         }
     }
