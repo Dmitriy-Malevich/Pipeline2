@@ -1,4 +1,4 @@
 FROM python:latest
 WORKDIR /app
-COPY app.py
+COPY app.py .
 CMD ["python","app.py"]
