@@ -7,18 +7,18 @@ pipeline {
 //	properties([pipelineTriggers([githubPush()])]) }    
 
     stages {
-	stage('Checkout SCM') {
-            steps {
-		checkout([
-                 $class: 'GitSCM',
-                 branches: [[name: 'main']],
-                 userRemoteConfigs: [[
-                    url: 'git@github.com:Dmitriy-Malevich/Pipeline2.git',
-                    credentialsId: '',
-                 ]]
-                ])
-            }
-        }
+//	stage('Checkout SCM') {
+//            steps {
+//		checkout([
+//                 $class: 'GitSCM',
+//                 branches: [[name: 'main']],
+//                 userRemoteConfigs: [[
+//                    url: 'git@github.com:Dmitriy-Malevich/Pipeline2.git',
+//                    credentialsId: '',
+//                 ]]
+//                ])
+//            }
+//        }
         stage('Build Image') {
             steps {
                 sh 'docker build -t dmitriy228/my-app .'
