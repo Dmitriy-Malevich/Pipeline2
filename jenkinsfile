@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		sh 'whoami'
+		sh 'pwd'
 		sh 'hostname'
 		sh 'docker push dmitriy228/my-app'
             }
