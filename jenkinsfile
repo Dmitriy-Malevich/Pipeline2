@@ -20,12 +20,13 @@ pipeline {
         }
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 8080:8080 my-app'
+                sh 'docker run -d my-app'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker push my-app'
+                sh 'docker tag my-app:latest dmitriy228/my-app'
+		sh 'docker push my-app'
             }
         }
     }
