@@ -3,11 +3,11 @@ pipeline {
         label 'ubuntu_slave'
     }
     stages {
-    stage('Build') {
-            steps {
-                sh 'mvn -f /root/jenkins/workspace/111111111111111111111111111111 clean package'
-            }
-        }
+//    stage('Build') {
+//            steps {
+//                sh 'mvn -f /root/jenkins/workspace/111111111111111111111111111111 clean package'
+//            }
+//        }
         stage('Test') {
             steps {
                 junit '**/target/surefire-reports/TEST-*.xml'
