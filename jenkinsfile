@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-//                sh 'docker tag my-app:latest dmitriy228/my-app'
+		sh 'hostname'
 		sh 'docker push dmitriy228/my-app'
             }
         }
