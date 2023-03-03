@@ -2,8 +2,8 @@
 pipeline {
     agent {
         label 'ubuntu_slave'
-	triggers {
-		properties([pipelineTriggers([githubPush()])]) }    
+    triggers {
+	properties([pipelineTriggers([githubPush()])]) }    
 }
     stages {
 	stage('Checkout SCM') {
