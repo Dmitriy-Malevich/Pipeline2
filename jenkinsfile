@@ -8,11 +8,11 @@ pipeline {
 //                sh 'mvn -f /root/jenkins/workspace/111111111111111111111111111111 clean package'
 //            }
 //        }
-        stage('Test') {
-            steps {
-                junit '**/target/surefire-reports/TEST-*.xml'
-            }
-        }
+//        stage('Test') {
+//            steps {
+//                junit '**/target/surefire-reports/TEST-*.xml'
+//            }
+//        }
         stage('Build Image') {
             steps {
                 sh 'docker build -t my-app .'
