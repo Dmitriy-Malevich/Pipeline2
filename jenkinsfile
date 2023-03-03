@@ -3,16 +3,18 @@ pipeline {
         label 'ubuntu_slave'
     }
     stages {
-//    stage('Build') {
-//            steps {
-//                sh 'mvn -f /root/jenkins/workspace/111111111111111111111111111111 clean package'
-//            }
-//        }
-//        stage('Test') {
-//            steps {
-//                junit '**/target/surefire-reports/TEST-*.xml'
-//            }
-//        }
+	stage('Checkout SCM') {
+            steps {
+		checkout([
+                 $class: 'GitSCM',
+                 branches: [[name: 'main']],
+                 userRemoteConfigs: [[
+                    url: 'git@github.com:Dmitriy-Malevich/Pipeline2.git',
+                    credentialsId: '',
+                 ]]
+                ])
+            }
+        }
         stage('Build Image') {
             steps {
                 sh 'docker build -t dmitriy228/my-app .'
