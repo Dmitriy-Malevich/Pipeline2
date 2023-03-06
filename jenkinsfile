@@ -41,7 +41,7 @@ pipeline {
         }
 }
 
-        stage('Deploy') {
+        stage('111Deploy') {
             steps {
 		sh 'pwd'
 		sh 'hostname'
