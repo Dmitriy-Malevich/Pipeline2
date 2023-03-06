@@ -32,7 +32,7 @@ pipeline {
 	stage('Docker login & run docker') {
             steps {
                 echo "=============== docker login==============="
-		withCredentials([usernamePassword(credentialsID: 'Dockerhub-login' , usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]) {
+		withCredentials([usernamePassword(credentialsId: 'Dockerhub-login' , usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]) {
 		sh """
 		docker login -u $USERNAME -p $PASSWORD
 		"""
