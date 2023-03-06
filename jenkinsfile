@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('_Build Image_') {
             steps {
-                sh 'docker build -t dmitriy228/my-app .'
+                sh 'docker build -t dmitriy228/my-app:1.0.1 .'
             }
         }
         stage('_Run Container_') {
             steps {
-                sh 'docker run -d dmitriy228/my-app'
+                sh 'docker run -d dmitriy228/my-app:1.0.1'
             }
         }
 	stage('_Docker login && run docker_') {
@@ -26,11 +26,11 @@ pipeline {
         }
 }
 
-        stage('_Deploy_') {
+        stage('__Deploy__') {
             steps {
 		sh 'pwd'
 		sh 'hostname'
-		sh 'docker push dmitriy228/my-app'
+		sh 'docker push dmitriy228/my-app:1.0.1'
             }
         }
     }
