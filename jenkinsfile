@@ -15,7 +15,7 @@ pipeline {
                 sh 'docker run -d dmitriy228/my-app'
             }
         }
-	stage('Docker login & run docker') {
+	stage('Docker login && run docker') {
             steps {
                 echo "=============== docker login==============="
 		withCredentials([usernamePassword(credentialsId: 'Dockerhub-login' , usernameVariable: 'USERNAME' , passwordVariable: 'PASSWORD')]) {
