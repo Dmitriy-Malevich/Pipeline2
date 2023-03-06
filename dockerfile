@@ -1,5 +1,5 @@
-FROM python3:latest
+FROM python:latest
 WORKDIR /app
 COPY app.py .
-CMD ["python3","app.py"]
+CMD ["python","app.py"]
 CMD tail -f /dev/null
