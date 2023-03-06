@@ -19,7 +19,7 @@ pipeline {
 //                ])
 //            }
 //        }
-        stage('Build Image') {
+        stage('Build Image1') {
             steps {
                 sh 'docker build -t dmitriy228/my-app .'
             }
