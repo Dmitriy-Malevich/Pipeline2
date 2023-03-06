@@ -10,7 +10,7 @@ pipeline {
                 sh 'docker build -t dmitriy228/my-app .'
             }
         }
-        stage('Run Container') {
+        stage('_Run Container_') {
             steps {
                 sh 'docker run -d dmitriy228/my-app'
             }
