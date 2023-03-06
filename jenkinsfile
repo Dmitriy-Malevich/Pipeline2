@@ -5,7 +5,7 @@ pipeline {
 }    
 
     stages {
-        stage('Build Image') {
+        stage('_Build Image_') {
             steps {
                 sh 'docker build -t dmitriy228/my-app .'
             }
