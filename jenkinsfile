@@ -22,7 +22,6 @@ pipeline {
 		sh """
 		docker login -u $USERNAME -p $PASSWORD
 		"""
-		sh 'docker run -d dmitriy228/my-app'
             }
         }
 }
